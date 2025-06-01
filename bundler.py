@@ -49,6 +49,7 @@ if not os.path.exists('keymasters_keep'):
 for repo in config['game_repos']:
     repo_config = {
         'glob': '*.py',
+        'skip': [],
     }
     if isinstance(repo, dict):
         repo_config.update(repo)
@@ -64,6 +65,9 @@ for repo in config['game_repos']:
     games = glob.glob(repo_config['glob'], root_dir=folder)
     for game in games:
         base_name = os.path.basename(game)
+        if base_name in repo_config['skip']:
+            print(f"Skipping {base_name} as per configuration")
+            continue
         dest = os.path.join('keymasters_keep', 'games', base_name)
         if os.path.exists(dest):
             print(f"Updating {base_name} from {folder}")
