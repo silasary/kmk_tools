@@ -1,11 +1,18 @@
 apworld: https://github.com/SerpentAI/Archipelago/releases/download/kmk-0002/keymasters_keep.apworld
 
 game_repos:
-  - https://github.com/SerpentAI/KeymastersKeepGameArchive # This is the archived repo for pre-1.0 games. A bunch of them will be replaced by repos later in this list.
+  - url: https://github.com/SerpentAI/KeymastersKeepGameArchive # This is the archived repo for pre-1.0 games. A bunch of them will be replaced by repos later in this list.
+    skip:
+      - the_bazaar_game.py
+      - realm_of_the_mad_god_game.py
   - https://github.com/BowserCrusher/BowserKeymastersKeepGames
   - https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
-  - https://github.com/delcake/KeymastersKeepGames
-  - https://github.com/ManNamedGarbo/KeymastersKeepGames
+  - url: https://github.com/delcake/KeymastersKeepGames
+    glob: "**/*.py"
+  - url: https://github.com/deyoungbryce/KeymastersKeepGames
+    glob: "games/*.py"
+  - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
+    glob: "games/*.py"
   - https://github.com/MediocreNightmare/GarfaxKeep
   - https://github.com/Knuxfan24/KnuxKeep
   - https://github.com/mathstar/KeymastersKeepGames
@@ -19,6 +26,5 @@ game_repos:
   - https://github.com/silasary/SilasaryKeep
   - https://github.com/Silvris/KeymastersKeepGames
   - https://github.com/Sundia1908/KeymastersKeepGames
-  - https://github.com/deyoungbryce/KeymastersKeepGames
   - https://github.com/Venumii/KeymastersKeepGames
 

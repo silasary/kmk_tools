@@ -40,11 +40,20 @@ with open('config.yaml', 'r') as file:
 if not os.path.exists('keymasters_keep.apworld'):
     print("Downloading keymasters_keep.apworld")
     download_file(config['apworld'], 'keymasters_keep.apworld')
+    if os.path.exists('keymasters_keep'):
+        shutil.rmtree('keymasters_keep')
 
 if not os.path.exists('keymasters_keep'):
     zipfile.ZipFile('keymasters_keep.apworld').extractall('.')
 
 for repo in config['game_repos']:
+    repo_config = {
+        'glob': '*.py',
+    }
+    if isinstance(repo, dict):
+        repo_config.update(repo)
+        repo = repo_config.pop('url')
+
     folder = repo.split('/')[-2] + '_' + repo.split('/')[-1]
     if not os.path.exists(folder):
         print(f"Cloning {repo} into {folder}")
@@ -52,13 +61,20 @@ for repo in config['game_repos']:
     else:
         print(f"Updating {folder}")
         git_output(['pull'], cwd=folder)
-    games = glob.glob('*.py', root_dir=folder)
+    games = glob.glob(repo_config['glob'], root_dir=folder)
     for game in games:
-        dest = os.path.join('keymasters_keep', 'games', game)
+        base_name = os.path.basename(game)
+        dest = os.path.join('keymasters_keep', 'games', base_name)
         if os.path.exists(dest):
-            print(f"Updating {game} from {folder}")
+            print(f"Updating {base_name} from {folder}")
             os.remove(dest)
-        shutil.copy(os.path.join(folder, game), dest)
+
+        # We modify the game file to include the source repo at the top
+        with open(os.path.join(folder, game), 'r') as f:
+            content = f.read()
+        content = f"# Source: {repo}\n" + content
+        with open(dest, 'w') as f:
+            f.write(content)
 
 added_games = []
 with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
