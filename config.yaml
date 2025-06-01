@@ -1,7 +1,7 @@
 apworld: https://github.com/SerpentAI/Archipelago/releases/download/kmk-0002/keymasters_keep.apworld
 
 game_repos:
-  - https://github.com/SerpentAI/KeymastersKeepGameArchive
+  - https://github.com/SerpentAI/KeymastersKeepGameArchive # This is the archived repo for pre-1.0 games. A bunch of them will be replaced by repos later in this list.
   - https://github.com/BowserCrusher/BowserKeymastersKeepGames
   - https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
   - https://github.com/delcake/KeymastersKeepGames
