@@ -7,22 +7,36 @@ game_repos:
     skip:
       - the_bazaar_game.py  # Outdated live service game
       - realm_of_the_mad_god_game.py  # Broken
-  - https://github.com/BowserCrusher/BowserKeymastersKeepGames
-  - https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
+      - cnc_generals_zh.py  # Fails fuzzing
+
+  - url: https://github.com/ansem5/keymasters-keep-games
+
+  - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
+
+  - url: https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
+    skip:
+      - cnc_generals_zh.py  # Fails fuzzing
+
   - url: https://github.com/delcake/KeymastersKeepGames
     glob: "**/*.py"
+
   - url: https://github.com/deyoungbryce/KeymastersKeepGames
     glob: "games/*.py"
+    skip:
+      - core_keeper_game.py  # Broken
+      - cod_bo3_zombies_game.py  # Broken
+
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
     glob: "games/*.py"
+
   - https://github.com/MediocreNightmare/GarfaxKeep
   - https://github.com/Knuxfan24/KnuxKeep
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
       - steam_library.py  # Accesses the Steam API during generation
+
   - https://github.com/pamymaf/KeymastersKeepGames
   - https://github.com/Pantscada/keymasterskeepgames
-  - https://github.com/ansem5/keymasters-keep-games
   - https://github.com/Rooby-Roo/KeymastersKeepGameArchive
   - https://github.com/RaceProUK/WestsideKeep
   - https://github.com/Seatori/KeymastersKeepGames
@@ -30,5 +44,7 @@ game_repos:
   - https://github.com/silasary/SilasaryKeep
   - https://github.com/Silvris/KeymastersKeepGames
   - https://github.com/Sundia1908/KeymastersKeepGames
+  - url: https://github.com/Toad-99/KeymastersKeepGames
+    skip:
+      - sea_of_thieves_game.py  # Broken
   - https://github.com/Venumii/KeymastersKeepGames
-
