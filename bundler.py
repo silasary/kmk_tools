@@ -81,7 +81,8 @@ for repo in config['game_repos']:
             f.write(content)
 
 added_games = []
-with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
+shutil.copy('keymasters_keep.apworld', 'keymasters_keep-bundled.apworld')
+with zipfile.ZipFile('keymasters_keep-bundled.apworld', 'a') as zipf:
     for game in glob.glob('*.py', root_dir='keymasters_keep/games'):
         path = f'keymasters_keep/games/{game}'
         if path in zipf.namelist():
@@ -92,6 +93,6 @@ with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
         added_games.append(game)
 
 print(f"Bundling complete. {len(added_games)} games are now bundled.")
-with open('bundled_games.txt', 'w') as f:
+with open('output.txt', 'w') as f:
     for game in added_games:
         f.write(f"{game}\n")
