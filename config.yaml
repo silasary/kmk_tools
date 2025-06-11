@@ -1,7 +1,7 @@
 apworld: https://github.com/SerpentAI/Archipelago/releases/download/kmk-0002/keymasters_keep.apworld
 
 game_repos:
-  - url: https://github.com/SerpentAI/KeymastersKeepGameArchive 
+  - url: https://github.com/SerpentAI/KeymastersKeepGameArchive
     # This is the archived repo for pre-1.0 games. A bunch of them will be replaced by repos later in this list.
     # It must be the first entry.
     skip:
@@ -17,6 +17,8 @@ game_repos:
     skip:
       - cnc_generals_zh.py  # Fails fuzzing
 
+  - https://github.com/CodeSystem521/Kmk-by-Code
+
   - url: https://github.com/delcake/KeymastersKeepGames
     glob: "**/*.py"
 
@@ -25,13 +27,17 @@ game_repos:
     skip:
       - core_keeper_game.py  # Broken
       - cod_bo3_zombies_game.py  # Broken
+
+  - https://github.com/Endivine1337/KeymastersKeepGames
   - https://github.com/jade152/KeyMastersKeepGames
+
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
     glob: "games/*.py"
 
   - https://github.com/MaynithTea/keymasters-keep-games
   - https://github.com/MediocreNightmare/GarfaxKeep
   - https://github.com/Knuxfan24/KnuxKeep
+
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
       - steam_library.py  # Accesses the Steam API during generation
@@ -45,7 +51,9 @@ game_repos:
   - https://github.com/silasary/SilasaryKeep
   - https://github.com/Silvris/KeymastersKeepGames
   - https://github.com/Sundia1908/KeymastersKeepGames
+
   - url: https://github.com/Toad-99/KeymastersKeepGames
     skip:
       - sea_of_thieves_game.py  # Broken
+
   - https://github.com/Venumii/KeymastersKeepGames

@@ -74,10 +74,10 @@ for repo in config['game_repos']:
             os.remove(dest)
 
         # We modify the game file to include the source repo at the top
-        with open(os.path.join(folder, game), 'r') as f:
+        with open(os.path.join(folder, game), 'r', encoding='utf-8') as f:
             content = f.read()
         content = f"# Source: {repo}\n" + content
-        with open(dest, 'w') as f:
+        with open(dest, 'w', encoding='utf-8') as f:
             f.write(content)
 
 added_games = []
