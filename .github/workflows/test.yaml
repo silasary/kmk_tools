@@ -21,8 +21,9 @@ jobs:
         run: |
           python bundler.py
 
-      - uses: Eijebong/ap-actions/ap-tests@main
+      - uses: Eijebong/ap-actions/ap-tests@dev
         with:
           apworld-path: keymasters_keep
           ap-version: '0.6.1'
           python-version: '3.12'
+          checkout: 'false'
