@@ -70,3 +70,9 @@
 [submodule "Venumii_KeymastersKeepGames"]
 	path = Venumii_KeymastersKeepGames
 	url = https://github.com/Venumii/KeymastersKeepGames
+[submodule "brev95_keymasters_keep"]
+	path = brev95_keymasters_keep
+	url = https://github.com/brev95/keymasters_keep
+[submodule "jade152_KeyMastersKeepGames"]
+	path = jade152_KeyMastersKeepGames
+	url = https://github.com/jade152/KeyMastersKeepGames
