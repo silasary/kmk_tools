@@ -69,6 +69,8 @@ for repo in config['game_repos']:
         git_output(['pull'], cwd=folder)
 
     games = glob.glob(repo_config['glob'], root_dir=folder)
+    if not games:
+        raise Exception(f"No games found in {folder} matching {repo_config['glob']}")
     for game in games:
         base_name = os.path.basename(game)
         if base_name in repo_config['skip']:
