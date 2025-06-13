@@ -46,6 +46,7 @@ if not os.path.exists('keymasters_keep.apworld'):
 if not os.path.exists('keymasters_keep'):
     zipfile.ZipFile('keymasters_keep.apworld').extractall('.')
 
+use_submodules = config.get('use_submodules', True)
 for repo in config['game_repos']:
     repo_config = {
         'glob': '*.py',
@@ -58,10 +59,15 @@ for repo in config['game_repos']:
     folder = repo.split('/')[-2] + '_' + repo.split('/')[-1]
     if not os.path.exists(folder):
         print(f"Cloning {repo} into {folder}")
-        git(['clone', repo, folder], cwd='.')
-    else:
+        if use_submodules:
+            git(['submodule', 'add', repo, folder], cwd='.')
+        else:
+            git(['clone', repo, folder], cwd='.')
+    elif not use_submodules:
+        # If we're not using submodules to lock to specific commits, grab the latest commit
         print(f"Updating {folder}")
         git_output(['pull'], cwd=folder)
+
     games = glob.glob(repo_config['glob'], root_dir=folder)
     for game in games:
         base_name = os.path.basename(game)

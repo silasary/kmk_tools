@@ -57,3 +57,5 @@ game_repos:
       - sea_of_thieves_game.py  # Broken
 
   - https://github.com/Venumii/KeymastersKeepGames
+
+use_submodules: true
