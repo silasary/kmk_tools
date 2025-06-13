@@ -12,7 +12,7 @@ game_repos:
   - url: https://github.com/ansem5/keymasters-keep-games
 
   - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
-
+  - url: https://github.com/brev95/keymasters_keep
   - url: https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
     skip:
       - cnc_generals_zh.py  # Fails fuzzing
