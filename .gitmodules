@@ -76,3 +76,6 @@
 [submodule "jade152_KeyMastersKeepGames"]
 	path = jade152_KeyMastersKeepGames
 	url = https://github.com/jade152/KeyMastersKeepGames
+[submodule "eiron_KeymastersKeepGames"]
+	path = eiron_KeymastersKeepGames
+	url = https://github.com/eiron/KeymastersKeepGames
