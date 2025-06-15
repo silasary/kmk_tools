@@ -79,3 +79,6 @@
 [submodule "eiron_KeymastersKeepGames"]
 	path = eiron_KeymastersKeepGames
 	url = https://github.com/eiron/KeymastersKeepGames
+[submodule "Kroooga_KeymastersKeepGames"]
+	path = Kroooga_KeymastersKeepGames
+	url = https://github.com/Kroooga/KeymastersKeepGames
