@@ -56,6 +56,7 @@ for repo in config['game_repos']:
         repo_config.update(repo)
         repo = repo_config.pop('url')
 
+    repo = repo.strip().rstrip('/')
     folder = repo.split('/')[-2] + '_' + repo.split('/')[-1]
     if not os.path.exists(folder):
         print(f"Cloning {repo} into {folder}")
