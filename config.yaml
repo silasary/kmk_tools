@@ -51,7 +51,8 @@ game_repos:
   - https://github.com/silasary/SilasaryKeep
   - https://github.com/Silvris/KeymastersKeepGames
   - https://github.com/Sundia1908/KeymastersKeepGames
-
+  - https://github.com/Tetratic/KeyMastersKeepGames
+  
   - url: https://github.com/Toad-99/KeymastersKeepGames
     skip:
       - sea_of_thieves_game.py  # Broken

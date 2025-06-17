@@ -82,3 +82,6 @@
 [submodule "Kroooga_KeymastersKeepGames"]
 	path = Kroooga_KeymastersKeepGames
 	url = https://github.com/Kroooga/KeymastersKeepGames
+[submodule "Tetratic_KeyMastersKeepGames"]
+	path = Tetratic_KeyMastersKeepGames
+	url = https://github.com/Tetratic/KeyMastersKeepGames
