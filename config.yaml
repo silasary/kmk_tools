@@ -33,7 +33,7 @@ game_repos:
   - url: https://github.com/Kroooga/KeymastersKeepGames
 
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
-    glob: "games/*.py"
+    glob: "*.py"
 
   - https://github.com/MaynithTea/keymasters-keep-games
   - https://github.com/MediocreNightmare/GarfaxKeep
