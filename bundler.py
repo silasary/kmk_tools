@@ -75,7 +75,8 @@ for repo in config['game_repos']:
     for game in games:
         base_name = os.path.basename(game)
         if base_name in repo_config['skip']:
-            print(f"Skipping {base_name} as per configuration")
+            if repo != 'https://github.com/SerpentAI/KeymastersKeepGameArchive':
+                print(f"Skipping {base_name} as per configuration")
             continue
         dest = os.path.join('keymasters_keep', 'games', base_name)
         if os.path.exists(dest):
