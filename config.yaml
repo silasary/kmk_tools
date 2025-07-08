@@ -22,9 +22,6 @@ game_repos:
 
   - url: https://github.com/deyoungbryce/KeymastersKeepGames
     glob: "games/*.py"
-    skip:
-      - core_keeper_game.py  # Broken
-      - cod_bo3_zombies_game.py  # Broken
 
   - url: https://github.com/eiron/KeymastersKeepGames
   - url: https://github.com/Endivine1337/KeymastersKeepGames
