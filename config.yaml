@@ -8,6 +8,7 @@ game_repos:
       - the_bazaar_game.py  # Outdated live service game
       - realm_of_the_mad_god_game.py  # Broken
       - cnc_generals_zh.py  # Fails fuzzing
+      - unreal_tournament_game_of_the_year_edition_game.py  # renamed to unreal_tournament_game.py
 
   - url: https://github.com/ansem5/keymasters-keep-games
   - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
@@ -26,7 +27,7 @@ game_repos:
   - url: https://github.com/eiron/KeymastersKeepGames
   - url: https://github.com/Endivine1337/KeymastersKeepGames
   - url: https://github.com/jade152/KeyMastersKeepGames
-    glob: "**/*.py"  
+    glob: "**/*.py"
   - url: https://github.com/Kroooga/KeymastersKeepGames
 
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
@@ -50,7 +51,7 @@ game_repos:
   - https://github.com/Silvris/KeymastersKeepGames
   - https://github.com/Sundia1908/KeymastersKeepGames
   - https://github.com/Tetratic/KeyMastersKeepGames
-  
+
   - url: https://github.com/Toad-99/KeymastersKeepGames
     skip:
       - sea_of_thieves_game.py  # Broken
