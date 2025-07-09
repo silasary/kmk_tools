@@ -46,6 +46,8 @@ if not os.path.exists('keymasters_keep.apworld'):
 if not os.path.exists('keymasters_keep'):
     zipfile.ZipFile('keymasters_keep.apworld').extractall('.')
 
+sources: dict[str, str] = {}
+
 use_submodules = config.get('use_submodules', True)
 for repo in config['game_repos']:
     repo_config = {
@@ -80,8 +82,12 @@ for repo in config['game_repos']:
             continue
         dest = os.path.join('keymasters_keep', 'games', base_name)
         if os.path.exists(dest):
-            print(f"Updating {base_name} from {folder}")
+            old_source = sources.get(base_name, None)
+            if old_source and old_source != "https://github.com/SerpentAI/KeymastersKeepGameArchive":
+                print(f"WARNING: Game {base_name} already exists from {old_source}, cannot overwrite with {repo}")
+            # print(f"Updating {base_name} from {folder} (was {old_source})")
             os.remove(dest)
+        sources[base_name] = repo
 
         # We modify the game file to include the source repo at the top
         with open(os.path.join(folder, game), 'r', encoding='utf-8') as f:
