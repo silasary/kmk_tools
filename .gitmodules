@@ -88,3 +88,6 @@
 [submodule "lorebum1_KeymasterKeepGames"]
 	path = lorebum1_KeymasterKeepGames
 	url = https://github.com/lorebum1/KeymasterKeepGames
+[submodule "LikeToCodeStreams_KeymastersKeepGames"]
+	path = LikeToCodeStreams_KeymastersKeepGames
+	url = https://github.com/LikeToCodeStreams/KeymastersKeepGames
