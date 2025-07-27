@@ -29,7 +29,7 @@ game_repos:
   - url: https://github.com/jade152/KeyMastersKeepGames
     glob: "**/*.py"
   - url: https://github.com/Kroooga/KeymastersKeepGames
-
+  - url: https://github.com/lorebum1/KeymasterKeepGames
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
     glob: "*.py"
 
@@ -57,5 +57,4 @@ game_repos:
       - sea_of_thieves_game.py  # Broken
 
   - https://github.com/Venumii/KeymastersKeepGames
-
 use_submodules: true
