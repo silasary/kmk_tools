@@ -85,3 +85,6 @@
 [submodule "Tetratic_KeyMastersKeepGames"]
 	path = Tetratic_KeyMastersKeepGames
 	url = https://github.com/Tetratic/KeyMastersKeepGames
+[submodule "lorebum1_KeymasterKeepGames"]
+	path = lorebum1_KeymasterKeepGames
+	url = https://github.com/lorebum1/KeymasterKeepGames
