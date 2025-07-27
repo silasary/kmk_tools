@@ -29,6 +29,7 @@ game_repos:
   - url: https://github.com/jade152/KeyMastersKeepGames
     glob: "**/*.py"
   - url: https://github.com/Kroooga/KeymastersKeepGames
+  - url: https://github.com/LikeToCodeStreams/KeymastersKeepGames
   - url: https://github.com/lorebum1/KeymasterKeepGames
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
     glob: "*.py"
