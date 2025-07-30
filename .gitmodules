@@ -91,3 +91,6 @@
 [submodule "LikeToCodeStreams_KeymastersKeepGames"]
 	path = LikeToCodeStreams_KeymastersKeepGames
 	url = https://github.com/LikeToCodeStreams/KeymastersKeepGames
+[submodule "Gameplushy_KeymastersKeepGames"]
+	path = Gameplushy_KeymastersKeepGames
+	url = https://github.com/Gameplushy/KeymastersKeepGames
