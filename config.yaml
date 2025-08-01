@@ -9,6 +9,7 @@ game_repos:
       - realm_of_the_mad_god_game.py  # Broken
       - cnc_generals_zh.py  # Fails fuzzing
       - unreal_tournament_game_of_the_year_edition_game.py  # renamed to unreal_tournament_game.py
+      - quake_three_game.py  # Broken
 
   - url: https://github.com/ansem5/keymasters-keep-games
   - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
@@ -29,6 +30,8 @@ game_repos:
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jade152/KeyMastersKeepGames
     glob: "**/*.py"
+    skip:
+      - quake_three_game.py  # Broken
   - url: https://github.com/Kroooga/KeymastersKeepGames
   - url: https://github.com/LikeToCodeStreams/KeymastersKeepGames
   - url: https://github.com/lorebum1/KeymasterKeepGames

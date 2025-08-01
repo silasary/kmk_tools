@@ -37,14 +37,14 @@ def git_output(args: list[str], cwd: str) -> str:
 with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
-if not os.path.exists('keymasters_keep.apworld'):
+if not os.path.exists('keymasters_keep_unmodified.apworld'):
     print("Downloading keymasters_keep.apworld")
-    download_file(config['apworld'], 'keymasters_keep.apworld')
+    download_file(config['apworld'], 'keymasters_keep_unmodified.apworld')
     if os.path.exists('keymasters_keep'):
         shutil.rmtree('keymasters_keep')
 
 if not os.path.exists('keymasters_keep'):
-    zipfile.ZipFile('keymasters_keep.apworld').extractall('.')
+    zipfile.ZipFile('keymasters_keep_unmodified.apworld').extractall('.')
 
 sources: dict[str, str] = {}
 
@@ -97,8 +97,8 @@ for repo in config['game_repos']:
             f.write(content)
 
 added_games = []
-shutil.copy('keymasters_keep.apworld', 'keymasters_keep-bundled.apworld')
-with zipfile.ZipFile('keymasters_keep-bundled.apworld', 'a') as zipf:
+shutil.copy('keymasters_keep_unmodified.apworld', 'keymasters_keep.apworld')
+with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
     for game in glob.glob('*.py', root_dir='keymasters_keep/games'):
         path = f'keymasters_keep/games/{game}'
         if path in zipf.namelist():
