@@ -15,6 +15,10 @@ if typing.TYPE_CHECKING:
     from keymasters_keep.game_objective_template import GameObjectiveTemplateData, GameObjectiveTemplate
     from keymasters_keep.game import Game
 
+def converter(obj):
+    if isinstance(obj, (set, frozenset)):
+        return sorted(obj)
+
 def main():
     import worlds
     source = worlds.WorldSource(os.path.abspath("keymasters_keep.apworld"), True, False)
@@ -30,23 +34,24 @@ def main():
     for name, cls in AutoGameRegister.games.items():
         game = cls(random=seed, include_time_consuming_objectives=True, include_difficult_objectives=True, archipelago_options=opts)
         # print(f"Loaded game: {game.name} with options: {game.options_cls}")
-        objectives = expand_objectives(game)
-        games.append({"game": name, "objectives": objectives})
+        gamedat = expand_objectives(game)
+        games.append(gamedat)
 
     with open("objectives.json", "w", encoding="utf-8") as f:
-        json.dump(games, f, indent=4, ensure_ascii=False)
+        json.dump(games, f, indent=4, ensure_ascii=False, default=converter)
     pass
 
 def expand_objectives(game: "Game"):
     objectives = []
+    datasets = {}
     for o in game.game_objective_templates():
-        objectives.append(expand_objective(o))
+        objectives.append(expand_objective(o, datasets))
         pass
 
+    data = {"game": game.name, "objectives": objectives, "datasets": datasets}
+    return data
 
-    return objectives
-
-def expand_objective(o: "GameObjectiveTemplate"):
+def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Dict[str, Any]:
     game_objective = o.label
 
     key: str
@@ -66,8 +71,11 @@ def expand_objective(o: "GameObjectiveTemplate"):
         if not evaluated_collection:
             raise Exception(f"Collection for key '{key}' is empty or invalid.")
         # example = ", ".join(str(value) for value in random.sample(*(evaluated_collection, k)))
-        data[key] = sorted(evaluated_collection)
-        assert isinstance(data[key], list), f"Data for key '{key}' is not a list: {data[key]}"
+        funcname = collection[0].__name__
+        if funcname == "<lambda>":
+            funcname = f"lambda_{collection[0].__code__.co_firstlineno}"
+        data[key] = funcname
+        datasets[funcname] = set(evaluated_collection)
 
     return {
             "label": game_objective,
