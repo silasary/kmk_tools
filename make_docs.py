@@ -41,6 +41,7 @@ def main():
 
     with open("objectives.json", "w", encoding="utf-8") as f:
         json.dump(games, f, indent=4, ensure_ascii=False, default=converter)
+    os.makedirs("docs/games", exist_ok=True)
     for game in games:
         with open(os.path.join("docs", "games", f"{game['file']}.md"), "w", encoding="utf-8") as f:
             f.write(f"# {game['name']}\n\n")
