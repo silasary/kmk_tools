@@ -60,10 +60,16 @@ def gather_data(games):
         games.append(gamedat)
 
 def write_docs(games):
+    with open('sources.json', 'r', encoding='utf-8') as f:
+        sources = json.load(f)
+        sources = {os.path.splitext(k.lower())[0]: v for k, v in sources.items()}
     os.makedirs("docs/games", exist_ok=True)
     for game in games:
         with open(os.path.join("docs", "games", f"{game['file']}.md"), "w", encoding="utf-8") as f:
             f.write(f"# {game['name']}\n\n")
+            source = sources.get(game['file'], None)
+            if source:
+                f.write(f"Download: [{source}]({source})\n\n")
             yaml_content = game.get('yaml', None)
             if yaml_content:
                 f.write('??? "Default Yaml Options"\n\n')

@@ -1,3 +1,4 @@
+import json
 import os
 import shutil
 import subprocess
@@ -95,6 +96,9 @@ for repo in config['game_repos']:
         content = f"# Source: {repo}\n" + content
         with open(dest, 'w', encoding='utf-8') as f:
             f.write(content)
+
+    with open('sources.json', 'w', encoding='utf-8') as f:
+        json.dump(sources, f, indent=4, ensure_ascii=False)
 
 added_games = []
 shutil.copy('keymasters_keep_unmodified.apworld', 'keymasters_keep.apworld')
