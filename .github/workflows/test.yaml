@@ -30,15 +30,18 @@ jobs:
           python-version: '3.12'
           checkout: 'false'
       - name: Make docs
+        if: github.ref == 'refs/heads/main'
         run: |
           ln -s archipelago/.venv .venv
           uv run python make_docs.py
           mkdocs build
       - name: Upload static files as artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
           path: site/
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
