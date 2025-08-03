@@ -1,4 +1,4 @@
-site_name: Keymasters Keep Games
+site_name: Keymasters Keep Codex
 # site_url: https://mydomain.org/mysite
 theme:
   name: material
@@ -7,3 +7,6 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
