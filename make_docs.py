@@ -39,8 +39,17 @@ def gather_data(games):
     from worlds.keymasters_keep.world import KeymastersKeepOptions
 
     seed = random.Random()
-    opts = KeymastersKeepOptions(**{option_key: option.from_any(option.default)
-                                                 for option_key, option in KeymastersKeepOptions.type_hints.items()})
+    opt_dict = {option_key: option.from_any(option.default)
+                    for option_key, option in KeymastersKeepOptions.type_hints.items()}
+    with open("yaml_settings.yaml", "r", encoding="utf-8") as f:
+        yaml_opts = yaml.safe_load(f)
+        for key, value in yaml_opts.items():
+            if key in opt_dict:
+                opt_dict[key].value = value
+            else:
+                print(f"Warning: Unknown option '{key}' in yaml_settings.yaml, ignoring.")
+
+    opts = KeymastersKeepOptions(**opt_dict)
 
     for name, cls in AutoGameRegister.games.items():
         game = cls(random=seed, include_time_consuming_objectives=True, include_difficult_objectives=True, archipelago_options=opts)
