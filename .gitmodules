@@ -94,3 +94,6 @@
 [submodule "Gameplushy_KeymastersKeepGames"]
 	path = Gameplushy_KeymastersKeepGames
 	url = https://github.com/Gameplushy/KeymastersKeepGames
+[submodule "g0m_KeymastersKeepGames"]
+	path = g0m_KeymastersKeepGames
+	url = https://github.com/g0m/KeymastersKeepGames

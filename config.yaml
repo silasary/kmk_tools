@@ -27,6 +27,7 @@ game_repos:
 
   - url: https://github.com/eiron/KeymastersKeepGames
   - url: https://github.com/Endivine1337/KeymastersKeepGames
+  - url: https://github.com/g0m/KeymastersKeepGames
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jade152/KeyMastersKeepGames
     glob: "**/*.py"
