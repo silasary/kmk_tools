@@ -35,10 +35,34 @@ def main():
         game = cls(random=seed, include_time_consuming_objectives=True, include_difficult_objectives=True, archipelago_options=opts)
         # print(f"Loaded game: {game.name} with options: {game.options_cls}")
         gamedat = expand_objectives(game)
+        gamedat['name'] = name
+        gamedat['file'] = game.__module__.split(".")[-1]
         games.append(gamedat)
 
     with open("objectives.json", "w", encoding="utf-8") as f:
         json.dump(games, f, indent=4, ensure_ascii=False, default=converter)
+    for game in games:
+        with open(os.path.join("docs", "games", f"{game['file']}.md"), "w", encoding="utf-8") as f:
+            f.write(f"# {game['name']}\n\n")
+            f.write("## Objectives\n\n")
+            for objective in game['objectives']:
+                label = objective['label']
+                is_difficult = objective['is_difficult']
+                is_time_consuming = objective['is_time_consuming']
+                for key, value in objective['data'].items():
+                    label = label.replace(key, f"{key}[^{value}]")
+                f.write(f"- {label}")
+                if is_difficult:
+                    f.write("⚠️")
+                if is_time_consuming:
+                    f.write("⏳")
+                f.write("\n")
+                # f.write(f"  - Is Difficult: {objective['is_difficult']}\n")
+                # f.write(f"  - Is Time Consuming: {objective['is_time_consuming']}\n")
+            f.write("\n")
+            for key, dataset in game['datasets'].items():
+                f.write(f'[^{key}]: {", ".join([str(i) for i in dataset])}\n')
+            pass
     pass
 
 def expand_objectives(game: "Game"):
@@ -75,7 +99,7 @@ def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Di
         if funcname == "<lambda>":
             funcname = f"lambda_{collection[0].__code__.co_firstlineno}"
         data[key] = funcname
-        datasets[funcname] = set(evaluated_collection)
+        datasets[funcname] = sorted(evaluated_collection)
 
     return {
             "label": game_objective,
