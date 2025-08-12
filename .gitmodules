@@ -97,3 +97,6 @@
 [submodule "g0m_KeymastersKeepGames"]
 	path = g0m_KeymastersKeepGames
 	url = https://github.com/g0m/KeymastersKeepGames
+[submodule "ant-acres_KeyMastersKeepGames"]
+	path = ant-acres_KeyMastersKeepGames
+	url = https://github.com/ant-acres/KeyMastersKeepGames

@@ -11,6 +11,7 @@ game_repos:
       - unreal_tournament_game_of_the_year_edition_game.py  # renamed to unreal_tournament_game.py
       - quake_three_game.py  # Broken
 
+  - url: https://github.com/ant-acres/KeyMastersKeepGames
   - url: https://github.com/ansem5/keymasters-keep-games
   - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
   - url: https://github.com/brev95/keymasters_keep
