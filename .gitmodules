@@ -100,3 +100,6 @@
 [submodule "ant-acres_KeyMastersKeepGames"]
 	path = ant-acres_KeyMastersKeepGames
 	url = https://github.com/ant-acres/KeyMastersKeepGames
+[submodule "alxamei_KeymastersKeepGames"]
+	path = alxamei_KeymastersKeepGames
+	url = https://github.com/alxamei/KeymastersKeepGames
