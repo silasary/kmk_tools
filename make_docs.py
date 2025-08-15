@@ -66,12 +66,16 @@ def gather_data(games):
             gamedat['yaml'] = yaml.dump(gopts)
 
         gamedat['doc'] = sys.modules[game.__module__].__doc__
+        gamedat['platforms'] = [game.platform.value]
+        if game.platforms_other:
+            gamedat['platforms'].extend([p.value for p in game.platforms_other])
         games.append(gamedat)
 
 def write_docs(games):
     with open('sources.json', 'r', encoding='utf-8') as f:
         sources = json.load(f)
         sources = {os.path.splitext(k.lower())[0]: v for k, v in sources.items()}
+    by_platform = {}
     os.makedirs("docs/games", exist_ok=True)
     for game in games:
         with open(os.path.join("docs", "games", f"{game['file']}.md"), "w", encoding="utf-8") as f:
@@ -104,6 +108,39 @@ def write_docs(games):
             for key, dataset in game['datasets'].items():
                 f.write(f'[^{key}]: {", ".join([str(i) for i in dataset])}\n')
 
+        for platform in game['platforms']:
+            by_platform.setdefault(platform, []).append(game)
+
+    os.makedirs("docs/platforms", exist_ok=True)
+    plat_names = get_comments_from_enums()
+    for platform, games in by_platform.items():
+        name = plat_names.get(platform, platform)
+        header = f"# {name}\n\n"
+        if os.path.exists(os.path.join("docs", "platforms", f"{platform}.md")):
+            with open(os.path.join("docs", "platforms", f"{platform}.md"), "r", encoding="utf-8") as f:
+                text = f.read()
+                text = text.split("## Games")[0]  # Keep the header only
+        with open(os.path.join("docs", "platforms", f"{platform}.md"), "w", encoding="utf-8") as f:
+            f.write(header)
+            f.write("## Games\n\n")
+            for game in games:
+                f.write(f"- [{game['name']}](../games/{game['file']}.md)\n")
+
+def get_comments_from_enums() -> Dict[str, str]:
+    plats = {}
+    import tokenize
+    with open('keymasters_keep/enums.py') as f:
+        tokens = tokenize.generate_tokens(f.readline)
+        key = None
+        comment = None
+        for tok in tokens:
+            if tok.type == tokenize.STRING:
+                key = tok.string.strip('"\'')
+            elif tok.type == tokenize.COMMENT:
+                comment = tok.string
+                plats[key] = comment.lstrip('# ').strip()
+
+    return plats
 
 def expand_objectives(game: "Game"):
     objectives = []
