@@ -13,6 +13,8 @@ game_repos:
 
   - url: https://github.com/ant-acres/KeyMastersKeepGames
   - url: https://github.com/ansem5/keymasters-keep-games
+  - url: https://github.com/alxamei/KeymastersKeepGames
+    glob: "games/*.py"
   - url: https://github.com/BowserCrusher/BowserKeymastersKeepGames
   - url: https://github.com/brev95/keymasters_keep
   - url: https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
