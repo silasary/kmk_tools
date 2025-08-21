@@ -33,7 +33,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           ln -s archipelago/.venv .venv
-          uv pip install -r .\requirements.txt
+          uv pip install -r ./requirements.txt
           uv run python make_docs.py
           mkdocs build
       - name: Upload static files as artifact
