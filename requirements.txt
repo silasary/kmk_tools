@@ -1,3 +1,4 @@
 PyYAML
 requests
 mkdocs-material
+traceback-with-variables

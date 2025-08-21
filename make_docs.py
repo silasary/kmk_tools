@@ -7,6 +7,7 @@ import typing
 from typing import Any, Callable, Dict, List, Sequence, Union
 
 import yaml
+from traceback_with_variables import activate_by_import  # noqa
 
 
 sys.path.append("archipelago")
