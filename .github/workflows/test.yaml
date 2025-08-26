@@ -30,7 +30,6 @@ jobs:
           python-version: '3.12'
           checkout: 'false'
       - name: Make docs
-        if: github.ref == 'refs/heads/main'
         run: |
           ln -s archipelago/.venv .venv
           uv pip install -r ./requirements.txt
