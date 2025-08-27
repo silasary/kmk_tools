@@ -1,105 +1,105 @@
 [submodule "SerpentAI_KeymastersKeepGameArchive"]
-	path = SerpentAI_KeymastersKeepGameArchive
+	path = submodules/serpentai_keymasterskeepgamearchive
 	url = https://github.com/SerpentAI/KeymastersKeepGameArchive
 [submodule "ansem5_keymasters-keep-games"]
-	path = ansem5_keymasters-keep-games
+	path = submodules/ansem5_keymasters-keep-games
 	url = https://github.com/ansem5/keymasters-keep-games
 [submodule "BowserCrusher_BowserKeymastersKeepGames"]
-	path = BowserCrusher_BowserKeymastersKeepGames
+	path = submodules/bowsercrusher_bowserkeymasterskeepgames
 	url = https://github.com/BowserCrusher/BowserKeymastersKeepGames
 [submodule "CaptainMcGee_McGeeKeymastersKeepGames"]
-	path = CaptainMcGee_McGeeKeymastersKeepGames
+	path = submodules/captainmcgee_mcgeekeymasterskeepgames
 	url = https://github.com/CaptainMcGee/McGeeKeymastersKeepGames
 [submodule "CodeSystem521_Kmk-by-Code"]
-	path = CodeSystem521_Kmk-by-Code
+	path = submodules/codesystem521_kmk-by-code
 	url = https://github.com/CodeSystem521/Kmk-by-Code
 [submodule "delcake_KeymastersKeepGames"]
-	path = delcake_KeymastersKeepGames
+	path = submodules/delcake_keymasterskeepgames
 	url = https://github.com/delcake/KeymastersKeepGames
 [submodule "deyoungbryce_KeymastersKeepGames"]
-	path = deyoungbryce_KeymastersKeepGames
+	path = submodules/deyoungbryce_keymasterskeepgames
 	url = https://github.com/deyoungbryce/KeymastersKeepGames
 [submodule "Endivine1337_KeymastersKeepGames"]
-	path = Endivine1337_KeymastersKeepGames
+	path = submodules/endivine1337_keymasterskeepgames
 	url = https://github.com/Endivine1337/KeymastersKeepGames
 [submodule "ManNamedGarbo_KeymastersKeepGames"]
-	path = ManNamedGarbo_KeymastersKeepGames
+	path = submodules/mannamedgarbo_keymasterskeepgames
 	url = https://github.com/ManNamedGarbo/KeymastersKeepGames
 [submodule "MaynithTea_keymasters-keep-games"]
-	path = MaynithTea_keymasters-keep-games
+	path = submodules/maynithtea_keymasters-keep-games
 	url = https://github.com/MaynithTea/keymasters-keep-games
 [submodule "MediocreNightmare_GarfaxKeep"]
-	path = MediocreNightmare_GarfaxKeep
+	path = submodules/mediocrenightmare_garfaxkeep
 	url = https://github.com/MediocreNightmare/GarfaxKeep
 [submodule "Knuxfan24_KnuxKeep"]
-	path = Knuxfan24_KnuxKeep
+	path = submodules/knuxfan24_knuxkeep
 	url = https://github.com/Knuxfan24/KnuxKeep
 [submodule "mathstar_KeymastersKeepGames"]
-	path = mathstar_KeymastersKeepGames
+	path = submodules/mathstar_keymasterskeepgames
 	url = https://github.com/mathstar/KeymastersKeepGames
 [submodule "pamymaf_KeymastersKeepGames"]
-	path = pamymaf_KeymastersKeepGames
+	path = submodules/pamymaf_keymasterskeepgames
 	url = https://github.com/pamymaf/KeymastersKeepGames
 [submodule "Pantscada_keymasterskeepgames"]
-	path = Pantscada_keymasterskeepgames
+	path = submodules/pantscada_keymasterskeepgames
 	url = https://github.com/Pantscada/keymasterskeepgames
 [submodule "Rooby-Roo_KeymastersKeepGameArchive"]
-	path = Rooby-Roo_KeymastersKeepGameArchive
+	path = submodules/rooby-roo_keymasterskeepgamearchive
 	url = https://github.com/Rooby-Roo/KeymastersKeepGameArchive
 [submodule "RaceProUK_WestsideKeep"]
-	path = RaceProUK_WestsideKeep
+	path = submodules/raceprouk_westsidekeep
 	url = https://github.com/RaceProUK/WestsideKeep
 [submodule "Seatori_KeymastersKeepGames"]
-	path = Seatori_KeymastersKeepGames
+	path = submodules/seatori_keymasterskeepgames
 	url = https://github.com/Seatori/KeymastersKeepGames
 [submodule "SerpentAI_KeymastersKeepGames"]
-	path = SerpentAI_KeymastersKeepGames
+	path = submodules/serpentai_keymasterskeepgames
 	url = https://github.com/SerpentAI/KeymastersKeepGames
 [submodule "silasary_SilasaryKeep"]
-	path = silasary_SilasaryKeep
+	path = submodules/silasary_silasarykeep
 	url = https://github.com/silasary/SilasaryKeep
 [submodule "Silvris_KeymastersKeepGames"]
-	path = Silvris_KeymastersKeepGames
+	path = submodules/silvris_keymasterskeepgames
 	url = https://github.com/Silvris/KeymastersKeepGames
 [submodule "Sundia1908_KeymastersKeepGames"]
-	path = Sundia1908_KeymastersKeepGames
+	path = submodules/sundia1908_keymasterskeepgames
 	url = https://github.com/Sundia1908/KeymastersKeepGames
 [submodule "Toad-99_KeymastersKeepGames"]
-	path = Toad-99_KeymastersKeepGames
+	path = submodules/toad-99_keymasterskeepgames
 	url = https://github.com/Toad-99/KeymastersKeepGames
 [submodule "Venumii_KeymastersKeepGames"]
-	path = Venumii_KeymastersKeepGames
+	path = submodules/venumii_keymasterskeepgames
 	url = https://github.com/Venumii/KeymastersKeepGames
 [submodule "brev95_keymasters_keep"]
-	path = brev95_keymasters_keep
+	path = submodules/brev95_keymasters_keep
 	url = https://github.com/brev95/keymasters_keep
 [submodule "jade152_KeyMastersKeepGames"]
-	path = jade152_KeyMastersKeepGames
+	path = submodules/jade152_keymasterskeepgames
 	url = https://github.com/jade152/KeyMastersKeepGames
 [submodule "eiron_KeymastersKeepGames"]
-	path = eiron_KeymastersKeepGames
+	path = submodules/eiron_keymasterskeepgames
 	url = https://github.com/eiron/KeymastersKeepGames
 [submodule "Kroooga_KeymastersKeepGames"]
-	path = Kroooga_KeymastersKeepGames
+	path = submodules/kroooga_keymasterskeepgames
 	url = https://github.com/Kroooga/KeymastersKeepGames
 [submodule "Tetratic_KeyMastersKeepGames"]
-	path = Tetratic_KeyMastersKeepGames
+	path = submodules/tetratic_keymasterskeepgames
 	url = https://github.com/Tetratic/KeyMastersKeepGames
 [submodule "lorebum1_KeymasterKeepGames"]
-	path = lorebum1_KeymasterKeepGames
+	path = submodules/lorebum1_keymasterkeepgames
 	url = https://github.com/lorebum1/KeymasterKeepGames
 [submodule "LikeToCodeStreams_KeymastersKeepGames"]
-	path = LikeToCodeStreams_KeymastersKeepGames
+	path = submodules/liketocodestreams_keymasterskeepgames
 	url = https://github.com/LikeToCodeStreams/KeymastersKeepGames
 [submodule "Gameplushy_KeymastersKeepGames"]
-	path = Gameplushy_KeymastersKeepGames
+	path = submodules/gameplushy_keymasterskeepgames
 	url = https://github.com/Gameplushy/KeymastersKeepGames
 [submodule "g0m_KeymastersKeepGames"]
-	path = g0m_KeymastersKeepGames
+	path = submodules/g0m_keymasterskeepgames
 	url = https://github.com/g0m/KeymastersKeepGames
 [submodule "ant-acres_KeyMastersKeepGames"]
-	path = ant-acres_KeyMastersKeepGames
+	path = submodules/ant-acres_keymasterskeepgames
 	url = https://github.com/ant-acres/KeyMastersKeepGames
 [submodule "alxamei_KeymastersKeepGames"]
-	path = alxamei_KeymastersKeepGames
+	path = submodules/alxamei_keymasterskeepgames
 	url = https://github.com/alxamei/KeymastersKeepGames

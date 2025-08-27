@@ -7,7 +7,7 @@ import typing
 from typing import Any, Callable, Dict, List, Sequence, Union
 
 import yaml
-from traceback_with_variables import activate_by_import  # noqa
+from traceback_with_variables import activate_by_import
 
 
 sys.path.append("archipelago")
@@ -46,6 +46,8 @@ def gather_data(games):
         yaml_opts = yaml.safe_load(f)
         for key, value in yaml_opts.items():
             if key in opt_dict:
+                if opt_dict[key].value == value:
+                    print(f"Notice: Option '{key}' already set to {value}.")
                 opt_dict[key].value = value
             else:
                 print(f"Warning: Unknown option '{key}' in yaml_settings.yaml, ignoring.")

@@ -60,7 +60,7 @@ for repo in config['game_repos']:
         repo = repo_config.pop('url')
 
     repo = repo.strip().rstrip('/')
-    folder = repo.split('/')[-2] + '_' + repo.split('/')[-1]
+    folder = os.path.join('submodules', repo.split('/')[-2].lower() + '_' + repo.split('/')[-1].lower())
     if not os.path.exists(folder):
         print(f"Cloning {repo} into {folder}")
         if use_submodules:
