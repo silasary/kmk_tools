@@ -103,3 +103,6 @@
 [submodule "alxamei_KeymastersKeepGames"]
 	path = submodules/alxamei_keymasterskeepgames
 	url = https://github.com/alxamei/KeymastersKeepGames
+[submodule "submodules/emeraldheart-dev_keymasters-projects"]
+	path = submodules/emeraldheart-dev_keymasters-projects
+	url = https://github.com/Emeraldheart-Dev/Keymasters-Projects
