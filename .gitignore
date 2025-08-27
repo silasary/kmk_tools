@@ -8,3 +8,4 @@
 /docs/games/*.md
 /sources.json
 /docs/platforms/*.md
+*.pyc
