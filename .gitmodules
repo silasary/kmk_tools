@@ -106,3 +106,6 @@
 [submodule "submodules/emeraldheart-dev_keymasters-projects"]
 	path = submodules/emeraldheart-dev_keymasters-projects
 	url = https://github.com/Emeraldheart-Dev/Keymasters-Projects
+[submodule "submodules/erbs-gh_keymasterskeepgames"]
+	path = submodules/erbs-gh_keymasterskeepgames
+	url = https://github.com/erbs-gh/KeymastersKeepGames
