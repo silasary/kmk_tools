@@ -179,6 +179,8 @@ def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Di
         if funcname == "<lambda>":
             funcname = f"lambda_{collection[0].__code__.co_firstlineno}"
         data[key] = funcname
+        if isinstance(evaluated_collection, set):
+            raise Exception("Sets are not allowed, use list or range instead.")
         datasets[funcname] = sorted(evaluated_collection)
 
     return {

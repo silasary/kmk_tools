@@ -31,9 +31,11 @@ game_repos:
   - url: https://github.com/eiron/KeymastersKeepGames
     skip:
       - cursed_red_dead_redemption_2_game.py
-  - url: https://github.com/Emeraldheart-Dev/Keymasters-Projects      
+  - url: https://github.com/Emeraldheart-Dev/Keymasters-Projects
   - url: https://github.com/Endivine1337/KeymastersKeepGames
   - url: https://github.com/erbs-gh/KeymastersKeepGames
+    skip:
+      geoguessr.py: 4ff400cf750480e6eec9ec38f6b3afd6b4c984be93270df5cf92c39a77efdcde
   - url: https://github.com/g0m/KeymastersKeepGames
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jade152/KeyMastersKeepGames
@@ -52,7 +54,8 @@ game_repos:
 
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
-      - steam_library.py  # Accesses the Steam API during generation
+      steam_library.py: True  # Accesses the Steam API during generation
+      new_york_times_games.py: d851cbd2078e407b5d0cfcf2a789231cdf400ca9a739373f70b6e0c5f0e5d2b8
 
   - https://github.com/pamymaf/KeymastersKeepGames
   - https://github.com/Pantscada/keymasterskeepgames

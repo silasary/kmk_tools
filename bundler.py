@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 import shutil
@@ -16,8 +17,24 @@ if not os.path.exists('keymasters_keep'):
     zipfile.ZipFile('keymasters_keep_unmodified.apworld').extractall('.')
 
 sources: dict[str, str] = {}
+skipped = {}
 
 use_submodules = config.get('use_submodules', True)
+
+def should_skip_base_name(repo_config, game, folder) -> bool:
+    base_name = os.path.basename(game)
+    if isinstance(repo_config['skip'], list):
+        return base_name in repo_config['skip']
+    elif isinstance(repo_config['skip'], dict):
+        skip_hash = repo_config['skip'].get(base_name)
+        if skip_hash is True:
+            return True
+        with open(os.path.join(folder, base_name), 'rb') as f:
+            file_hash = str(hashlib.sha256(f.read()).hexdigest())
+        if skip_hash == file_hash:
+            return True
+    return False
+
 for repo in config['game_repos']:
     repo_config = {
         'glob': '*.py',
@@ -45,11 +62,17 @@ for repo in config['game_repos']:
         raise Exception(f"No games found in {folder} matching {repo_config['glob']}")
     for game in games:
         base_name = os.path.basename(game)
-        if base_name in repo_config['skip']:
+        dest = os.path.join('keymasters_keep', 'games', base_name)
+
+        if should_skip_base_name(repo_config, game, folder):
             if repo != 'https://github.com/SerpentAI/KeymastersKeepGameArchive':
                 print(f"Skipping {base_name} as per configuration")
+                with open(os.path.join(folder, game), 'rb') as f:
+                    file_hash = str(hashlib.sha256(f.read()).hexdigest())
+                skipped[base_name] = file_hash
+            if os.path.exists(dest):
+                os.unlink(dest)
             continue
-        dest = os.path.join('keymasters_keep', 'games', base_name)
         if os.path.exists(dest):
             old_source = sources.get(base_name, None)
             if old_source and old_source != "https://github.com/SerpentAI/KeymastersKeepGameArchive":
@@ -82,5 +105,13 @@ with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
 
 print(f"Bundling complete. {len(added_games)} games are now bundled.")
 with open('output.txt', 'w') as f:
+    f.write("Bundled Games:\n")
     for game in added_games:
         f.write(f"{game}\n")
+    f.write("\n")
+    f.write(f"Total games bundled: {len(added_games)}\n")
+    if skipped:
+        f.write("\n\nSkipped Games:\n")
+        for game, file_hash in skipped.items():
+            f.write(f"{game} (hash: {file_hash})\n")
+        f.write(f"\nTotal games skipped: {len(skipped)}\n")
