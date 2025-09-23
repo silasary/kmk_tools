@@ -7,14 +7,19 @@ import glob
 
 from common import config, download_file, git, git_output
 
-if not os.path.exists('keymasters_keep_unmodified.apworld'):
+unmodified_name = 'keymasters_keep_unmodified.apworld'
+if os.path.exists("keymasters_keep_src.apworld"):
+    # Use when we need to force a build newer than the latest release
+    unmodified_name = "keymasters_keep_src.apworld"
+
+if not os.path.exists(unmodified_name):
     print("Downloading keymasters_keep.apworld")
-    download_file(config['apworld'], 'keymasters_keep_unmodified.apworld')
+    download_file(config['apworld'], unmodified_name)
     if os.path.exists('keymasters_keep'):
         shutil.rmtree('keymasters_keep')
 
 if not os.path.exists('keymasters_keep'):
-    zipfile.ZipFile('keymasters_keep_unmodified.apworld').extractall('.')
+    zipfile.ZipFile(unmodified_name).extractall('.')
 
 sources: dict[str, str] = {}
 skipped = {}
@@ -92,7 +97,7 @@ for repo in config['game_repos']:
         json.dump(sources, f, indent=4, ensure_ascii=False)
 
 added_games = []
-shutil.copy('keymasters_keep_unmodified.apworld', 'keymasters_keep.apworld')
+shutil.copy(unmodified_name, 'keymasters_keep.apworld')
 with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
     for game in glob.glob('*.py', root_dir='keymasters_keep/games'):
         path = f'keymasters_keep/games/{game}'

@@ -2,6 +2,7 @@
 /keymasters_keep.apworld
 /bundled_games.txt
 /*.apworld
+!/keymasters_keep_src.apworld
 /output.txt
 /site/
 /objectives.json
