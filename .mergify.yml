@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: automatic merge dependency updates
+    conditions:
+      - status-success=build
+      - author~=dependabot
+      - -files~=^(!?.github/workflows/)
+    actions:
+      merge:
+        method: squash
+      delete_head_branch: {}
