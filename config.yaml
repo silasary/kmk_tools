@@ -35,8 +35,7 @@ game_repos:
   - url: https://github.com/Emeraldheart-Dev/Keymasters-Projects
   - url: https://github.com/Endivine1337/KeymastersKeepGames
   - url: https://github.com/erbs-gh/KeymastersKeepGames
-    skip:
-      geoguessr.py: 4ff400cf750480e6eec9ec38f6b3afd6b4c984be93270df5cf92c39a77efdcde
+  - url: https://github.com/flower-snek/KeymastersKeepGames/
   - url: https://github.com/g0m/KeymastersKeepGames
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jade152/KeyMastersKeepGames

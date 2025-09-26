@@ -109,6 +109,9 @@
 [submodule "submodules/erbs-gh_keymasterskeepgames"]
 	path = submodules/erbs-gh_keymasterskeepgames
 	url = https://github.com/erbs-gh/KeymastersKeepGames
+[submodule "submodules/flower-snek_keymasterskeepgames"]
+	path = submodules/flower-snek_keymasterskeepgames
+	url = https://github.com/flower-snek/KeymastersKeepGames
 [submodule "submodules/archerestarcher_keymasterskeepimplementations"]
 	path = submodules/archerestarcher_keymasterskeepimplementations
 	url = https://github.com/ArcherestArcher/KeymastersKeepImplementations
