@@ -55,7 +55,6 @@ game_repos:
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
       steam_library.py: True  # Accesses the Steam API during generation
-      new_york_times_games.py: d851cbd2078e407b5d0cfcf2a789231cdf400ca9a739373f70b6e0c5f0e5d2b8
 
   - https://github.com/pamymaf/KeymastersKeepGames
   - https://github.com/Pantscada/keymasterskeepgames
