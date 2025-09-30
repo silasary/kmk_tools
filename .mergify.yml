@@ -8,4 +8,8 @@ pull_request_rules:
       merge:
         method: squash
       delete_head_branch: {}
-queue_rules: []
+queue_rules:
+  - autosquash: true
+    autoqueue: true
+    name: default
+    branch_protection_injection_mode: merge
