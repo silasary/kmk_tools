@@ -1,3 +1,10 @@
+#Mugen
+mugen_characters:
+- Kung-Fu Man
+- Mario
+- Wario
+- Sonic
+- Ryu
 # Real world scavenger hunt
 scavenger_include_community_engagement: true
 scavenger_include_cultural_discovery: true
