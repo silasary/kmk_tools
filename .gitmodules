@@ -115,3 +115,6 @@
 [submodule "submodules/archerestarcher_keymasterskeepimplementations"]
 	path = submodules/archerestarcher_keymasterskeepimplementations
 	url = https://github.com/ArcherestArcher/KeymastersKeepImplementations
+[submodule "submodules/pokemonfan1937_keymasterskeep"]
+	path = submodules/pokemonfan1937_keymasterskeep
+	url = https://github.com/pokemonfan1937/keymasterskeep
