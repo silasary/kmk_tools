@@ -5,15 +5,6 @@ mugen_characters:
 - Wario
 - Sonic
 - Ryu
-# Real world scavenger hunt
-scavenger_include_community_engagement: true
-scavenger_include_cultural_discovery: true
-scavenger_include_interaction_challenges: true
-scavenger_include_location_hunting: true
-scavenger_include_nature_exploration: true
-scavenger_include_object_collection: true
-scavenger_include_photography: true
-scavenger_include_seasonal_activities: true
 # Smash Ultimate
 super_smash_bros_ultimate_include_boss_battles: true
 super_smash_bros_ultimate_include_spirit_battles: true

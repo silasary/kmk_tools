@@ -71,8 +71,8 @@ game_repos:
   - https://github.com/Tetratic/KeyMastersKeepGames
 
   - url: https://github.com/Toad-99/KeymastersKeepGames
-    skip:
-      - sea_of_thieves_game.py  # Broken
+    # skip:
+    #   - sea_of_thieves_game.py  # Broken
 
   - https://github.com/Venumii/KeymastersKeepGames
 use_submodules: true
