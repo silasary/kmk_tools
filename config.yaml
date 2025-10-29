@@ -32,6 +32,7 @@ game_repos:
   - url: https://github.com/eiron/KeymastersKeepGames
     skip:
       - cursed_red_dead_redemption_2_game.py
+      - playnite_library.py
   - url: https://github.com/Emeraldheart-Dev/Keymasters-Projects
   - url: https://github.com/Endivine1337/KeymastersKeepGames
   - url: https://github.com/erbs-gh/KeymastersKeepGames
