@@ -118,3 +118,6 @@
 [submodule "submodules/pokemonfan1937_keymasterskeep"]
 	path = submodules/pokemonfan1937_keymasterskeep
 	url = https://github.com/pokemonfan1937/keymasterskeep
+[submodule "submodules/nitrotears_keymasterskeepgames"]
+	path = submodules/nitrotears_keymasterskeepgames
+	url = https://github.com/NitroTears/KeymastersKeepGames
