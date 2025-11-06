@@ -43,6 +43,7 @@ game_repos:
     glob: "**/*.py"
     skip:
       - quake_three_game.py  # Broken
+  - url: https://github.com/Knuxfan24/KnuxKeep
   - url: https://github.com/Kroooga/KeymastersKeepGames
   - url: https://github.com/LikeToCodeStreams/KeymastersKeepGames
   - url: https://github.com/lorebum1/KeymasterKeepGames
@@ -51,12 +52,12 @@ game_repos:
 
   - https://github.com/MaynithTea/keymasters-keep-games
   - https://github.com/MediocreNightmare/GarfaxKeep
-  - https://github.com/Knuxfan24/KnuxKeep
-
+  
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
       steam_library.py: True  # Accesses the Steam API during generation
 
+  - https://github.com/NitroTears/KeymastersKeepGames
   - https://github.com/pamymaf/KeymastersKeepGames
   - https://github.com/Pantscada/keymasterskeepgames
   - https://github.com/pokemonfan1937/keymasterskeep
