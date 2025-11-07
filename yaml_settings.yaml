@@ -1,3 +1,6 @@
+#ARMS
+arms_play_online: true
+arms_two_only: false
 #Mugen
 mugen_characters:
 - Kung-Fu Man
