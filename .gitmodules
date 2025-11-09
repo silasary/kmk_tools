@@ -121,3 +121,6 @@
 [submodule "submodules/nitrotears_keymasterskeepgames"]
 	path = submodules/nitrotears_keymasterskeepgames
 	url = https://github.com/NitroTears/KeymastersKeepGames
+[submodule "submodules/elirefeltores_keymasterskeepminesweeperplus"]
+	path = submodules/elirefeltores_keymasterskeepminesweeperplus
+	url = https://github.com/ElireFeltores/KeymastersKeepMinesweeperPlus
