@@ -41,6 +41,7 @@ game_repos:
   - url: https://github.com/g0m/KeymastersKeepGames
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jack5github/Jack5-Keymasters-Keep
+    glob: keymasters_keep/*.py
   - url: https://github.com/jade152/KeyMastersKeepGames
     glob: "**/*.py"
     skip:
