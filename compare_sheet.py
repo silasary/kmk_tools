@@ -12,27 +12,25 @@ sheet_repos = set()
 
 for row in data:
     if (repo := row[1]).startswith("https://github.com/"):
-        if '/tree/' in repo:
-            repo = repo.split('/tree/')[0]
-        if '/blob/' in repo:
-            repo = repo.split('/blob/')[0]
-        sheet_repos.add(repo.strip().rstrip('/'))
+        if "/tree/" in repo:
+            repo = repo.split("/tree/")[0]
+        if "/blob/" in repo:
+            repo = repo.split("/blob/")[0]
+        sheet_repos.add(repo.strip().rstrip("/"))
 
-pass
 
-with open('config.yaml', 'r') as file:
+with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
 config_repos = set()
 
-for repo in config['game_repos']:
+for repo in config["game_repos"]:
     if isinstance(repo, dict):
-        repo = repo.pop('url')
+        repo = repo.pop("url")
 
-    repo = repo.strip().rstrip('/')
+    repo = repo.strip().rstrip("/")
     config_repos.add(repo)
 
-pass
 
 if sheet_repos != config_repos:
     print("Repositories in the sheet do not match those in config.yaml")
@@ -45,5 +43,3 @@ if sheet_repos != config_repos:
 else:
     print("Repositories in the sheet match those in config.yaml")
     print("All repositories are accounted for.")
-
-pass

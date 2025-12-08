@@ -7,7 +7,7 @@ on:
 permissions:
   actions: write
   contents: write
-  
+
 jobs:
   commit_changes:
     runs-on: ubuntu-latest

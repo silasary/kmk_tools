@@ -7,72 +7,74 @@ import glob
 
 from common import config, download_file, git, git_output
 
-unmodified_name = 'keymasters_keep_unmodified.apworld'
+unmodified_name = "keymasters_keep_unmodified.apworld"
 if os.path.exists("keymasters_keep_src.apworld"):
     # Use when we need to force a build newer than the latest release
     unmodified_name = "keymasters_keep_src.apworld"
 
 if not os.path.exists(unmodified_name):
     print("Downloading keymasters_keep.apworld")
-    download_file(config['apworld'], unmodified_name)
-    if os.path.exists('keymasters_keep'):
-        shutil.rmtree('keymasters_keep')
+    download_file(config["apworld"], unmodified_name)
+    if os.path.exists("keymasters_keep"):
+        shutil.rmtree("keymasters_keep")
 
-if not os.path.exists('keymasters_keep'):
-    zipfile.ZipFile(unmodified_name).extractall('.')
+if not os.path.exists("keymasters_keep"):
+    zipfile.ZipFile(unmodified_name).extractall(".")
 
 sources: dict[str, str] = {}
 skipped = {}
 
-use_submodules = config.get('use_submodules', True)
+use_submodules = config.get("use_submodules", True)
+
 
 def should_skip_base_name(repo_config, game, folder) -> bool:
     base_name = os.path.basename(game)
-    if isinstance(repo_config['skip'], list):
-        return base_name in repo_config['skip']
-    elif isinstance(repo_config['skip'], dict):
-        skip_hash = repo_config['skip'].get(base_name)
+    if isinstance(repo_config["skip"], list):
+        return base_name in repo_config["skip"]
+    elif isinstance(repo_config["skip"], dict):
+        skip_hash = repo_config["skip"].get(base_name)
         if skip_hash is True:
             return True
-        with open(os.path.join(folder, base_name), 'rb') as f:
+        with open(os.path.join(folder, base_name), "rb") as f:
             file_hash = str(hashlib.sha256(f.read()).hexdigest())
         if skip_hash == file_hash:
             return True
     return False
 
-for repo in config['game_repos']:
+
+for repo in config["game_repos"]:
     repo_config = {
-        'glob': '*.py',
-        'skip': [],
+        "glob": "*.py",
+        "skip": [],
     }
     if isinstance(repo, dict):
         repo_config.update(repo)
-        repo = repo_config.pop('url')
+        repo = repo_config.pop("url")
 
-    repo = repo.strip().rstrip('/')
-    folder = os.path.join('submodules', repo.split('/')[-2].lower() + '_' + repo.split('/')[-1].lower())
+    repo = repo.strip().rstrip("/")
+    folder = os.path.join("submodules", repo.split("/")[-2].lower() + "_" + repo.split("/")[-1].lower())
     if not os.path.exists(folder):
         print(f"Cloning {repo} into {folder}")
         if use_submodules:
-            git(['submodule', 'add', repo, folder], cwd='.')
+            git(["submodule", "add", repo, folder], cwd=".")
         else:
-            git(['clone', repo, folder], cwd='.')
+            git(["clone", repo, folder], cwd=".")
     elif not use_submodules:
         # If we're not using submodules to lock to specific commits, grab the latest commit
         print(f"Updating {folder}")
-        git_output(['pull'], cwd=folder)
+        git_output(["pull"], cwd=folder)
 
-    games = glob.glob(repo_config['glob'], root_dir=folder)
+    games = glob.glob(repo_config["glob"], root_dir=folder)
     if not games:
         raise Exception(f"No games found in {folder} matching {repo_config['glob']}")
     for game in games:
         base_name = os.path.basename(game)
-        dest = os.path.join('keymasters_keep', 'games', base_name)
+        dest = os.path.join("keymasters_keep", "games", base_name)
 
         if should_skip_base_name(repo_config, game, folder):
-            if repo != 'https://github.com/SerpentAI/KeymastersKeepGameArchive':
+            if repo != "https://github.com/SerpentAI/KeymastersKeepGameArchive":
                 print(f"Skipping {base_name} as per configuration")
-                with open(os.path.join(folder, game), 'rb') as f:
+                with open(os.path.join(folder, game), "rb") as f:
                     file_hash = str(hashlib.sha256(f.read()).hexdigest())
                 skipped[base_name] = file_hash
             if os.path.exists(dest):
@@ -87,20 +89,20 @@ for repo in config['game_repos']:
         sources[base_name] = repo
 
         # We modify the game file to include the source repo at the top
-        with open(os.path.join(folder, game), 'r', encoding='utf-8') as f:
+        with open(os.path.join(folder, game), "r", encoding="utf-8") as f:
             content = f.read()
         content = f"# Source: {repo}\n" + content
-        with open(dest, 'w', encoding='utf-8') as f:
+        with open(dest, "w", encoding="utf-8") as f:
             f.write(content)
 
-    with open('sources.json', 'w', encoding='utf-8') as f:
+    with open("sources.json", "w", encoding="utf-8") as f:
         json.dump(sources, f, indent=4, ensure_ascii=False)
 
 added_games = []
-shutil.copy(unmodified_name, 'keymasters_keep.apworld')
-with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
-    for game in glob.glob('*.py', root_dir='keymasters_keep/games'):
-        path = f'keymasters_keep/games/{game}'
+shutil.copy(unmodified_name, "keymasters_keep.apworld")
+with zipfile.ZipFile("keymasters_keep.apworld", "a") as zipf:
+    for game in glob.glob("*.py", root_dir="keymasters_keep/games"):
+        path = f"keymasters_keep/games/{game}"
         if path in zipf.namelist():
             print(f"Game {path} already exists in the archive, skipping.")
             continue
@@ -109,7 +111,7 @@ with zipfile.ZipFile('keymasters_keep.apworld', 'a') as zipf:
         added_games.append(game)
 
 print(f"Bundling complete. {len(added_games)} games are now bundled.")
-with open('output.txt', 'w') as f:
+with open("output.txt", "w") as f:
     f.write("Bundled Games:\n")
     for game in added_games:
         f.write(f"{game}\n")

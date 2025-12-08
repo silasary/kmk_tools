@@ -8,7 +8,7 @@ def download_file(url: str, dest: str) -> None:
     print(f"Downloading {url} to {dest}")
     response = requests.get(url)
     if response.status_code == 200:
-        with open(dest, 'wb') as file:
+        with open(dest, "wb") as file:
             file.write(response.content)
     else:
         raise Exception(f"Failed to download {url}: {response.status_code}")
@@ -34,5 +34,5 @@ def git_output(args: list[str], cwd: str) -> str:
         raise Exception(f"Git command failed: {e}")
 
 
-with open('config.yaml', 'r') as file:
+with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
