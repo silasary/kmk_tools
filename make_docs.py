@@ -36,7 +36,7 @@ def main():
     pass
 
 def gather_data(games):
-    from re import MULTILINE as RE_MULTILINE, sub as re_sub
+    import re
     from worlds.keymasters_keep.game import AutoGameRegister
     from worlds.keymasters_keep.world import KeymastersKeepOptions
 
@@ -72,7 +72,7 @@ def gather_data(games):
         gamedat['doc'] = sys.modules[game.__module__].__doc__
         if game.__doc__ is not None:
             # Remove leading spaces in docstring to disable code block formatting by Markdown
-            gamedat['gamedoc'] = re_sub(r"^ {4}", "", game.__doc__, flags=RE_MULTILINE)
+            gamedat['gamedoc'] = re.sub(r"^ {4}", "", game.__doc__, flags=re.MULTILINE)
         gamedat['platforms'] = [game.platform.value]
         if game.platforms_other:
             gamedat['platforms'].extend([p.value for p in game.platforms_other])
