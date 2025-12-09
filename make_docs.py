@@ -36,6 +36,7 @@ def main():
     pass
 
 def gather_data(games):
+    import re
     from worlds.keymasters_keep.game import AutoGameRegister
     from worlds.keymasters_keep.world import KeymastersKeepOptions
 
@@ -69,6 +70,9 @@ def gather_data(games):
             gamedat['yaml'] = yaml.dump(gopts)
 
         gamedat['doc'] = sys.modules[game.__module__].__doc__
+        if game.__doc__ is not None:
+            # Remove leading spaces in docstring to disable code block formatting by Markdown
+            gamedat['gamedoc'] = re.sub(r"^ {4}", "", game.__doc__, flags=re.MULTILINE)
         gamedat['platforms'] = [game.platform.value]
         if game.platforms_other:
             gamedat['platforms'].extend([p.value for p in game.platforms_other])
@@ -86,6 +90,11 @@ def write_docs(games):
             source = sources.get(game['file'], None)
             if source:
                 f.write(f"Download: [{source}]({source})\n\n")
+            # While interchangeable, the game docstring takes precedence over the file docstring, as the game docstring is more likely to describe the game (Archipelago standard) while the file docstring is more likely to describe the implementation
+            if 'gamedoc' in game.keys():
+                f.write(f"---\n\n{game['gamedoc']}\n\n")
+            if game['doc'] is not None:
+                f.write(f"---\n\n{game['doc']}\n\n")
             yaml_content = game.get('yaml', None)
             if yaml_content:
                 f.write('??? "Default Yaml Options"\n\n')
