@@ -40,6 +40,7 @@ game_repos:
   - url: https://github.com/erbs-gh/KeymastersKeepGames
   - url: https://github.com/flower-snek/KeymastersKeepGames/
   - url: https://github.com/g0m/KeymastersKeepGames
+  - url: https://github.com/gamefalor/keymasters-Keep
   - url: https://github.com/Gameplushy/KeymastersKeepGames
   - url: https://github.com/jack5github/Jack5-Keymasters-Keep
     glob: keymasters_keep/*.py
@@ -56,7 +57,7 @@ game_repos:
 
   - https://github.com/MaynithTea/keymasters-keep-games
   - https://github.com/MediocreNightmare/GarfaxKeep
-  
+
   - url: https://github.com/mathstar/KeymastersKeepGames
     skip:
       steam_library.py: True  # Accesses the Steam API during generation
