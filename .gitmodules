@@ -127,3 +127,6 @@
 [submodule "submodules/jack5github_jack5-keymasters-keep"]
 	path = submodules/jack5github_jack5-keymasters-keep
 	url = https://github.com/jack5github/Jack5-Keymasters-Keep
+[submodule "submodules/gamefalor_keymasters-keep"]
+	path = submodules/gamefalor_keymasters-keep
+	url = https://github.com/gamefalor/keymasters-Keep
