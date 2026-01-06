@@ -22,12 +22,13 @@ jobs:
       - name: Run Bundler
         run: |
           python bundler.py
+          jq 'del(.["compatible_version", "version"])' keymasters_keep/archipelago.json > temp.json && mv temp.json keymasters_keep/archipelago.json
 
       - uses: Eijebong/ap-actions/ap-tests@main
         with:
           apworld-path: keymasters_keep
-          ap-version: '0.6.2'
-          python-version: '3.12'
+          ap-version: latest
+          python-version: '3.13'
           checkout: 'false'
       - name: Make docs
         run: |
