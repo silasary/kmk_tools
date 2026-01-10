@@ -180,11 +180,20 @@ def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Di
         # else:
         #     k = collection[1]
 
-        evaluated_collection = collection[0]()
+        if isinstance(collection[0], range):
+            evaluated_collection = list(collection[0])
+        elif callable(collection[0]):
+            evaluated_collection = collection[0]()
+        else:
+            evaluated_collection = collection[0]
+
         if not evaluated_collection:
             raise Exception(f"Collection for key '{key}' is empty or invalid.")
         # example = ", ".join(str(value) for value in random.sample(*(evaluated_collection, k)))
-        funcname = collection[0].__name__
+        if hasattr(collection[0], '__name__'):
+            funcname = collection[0].__name__
+        else:
+            funcname = o.__class__.__name__ + "_" + key
         if funcname == "<lambda>":
             funcname = f"lambda_{collection[0].__code__.co_firstlineno}"
         data[key] = funcname
