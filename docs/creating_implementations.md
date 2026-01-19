@@ -1,5 +1,7 @@
 # Creating KMK Implementations
-This document is intended teach you how to create a basic game implementation for Keymaster's Keep (KMK) by [deyoungbryce](https://github.com/deyoungbryce)
+This document is intended teach you how to create a basic game implementation for Keymaster's Keep (KMK)
+
+Guide written by [deyoungbryce](https://github.com/deyoungbryce)
 
 ## Things to Know Before Getting Started
 - I am by no means an expert on Keymaster's Keep, nor Python coding in general. I have, however, been successful in creating multiple working KMK implementations and this my way of sharing that knowledge.
