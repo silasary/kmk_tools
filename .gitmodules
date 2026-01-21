@@ -130,3 +130,6 @@
 [submodule "submodules/gamefalor_keymasters-keep"]
 	path = submodules/gamefalor_keymasters-keep
 	url = https://github.com/gamefalor/keymasters-Keep
+[submodule "submodules/kj7qlv_kmk"]
+	path = submodules/kj7qlv_kmk
+	url = https://github.com/KJ7QLV/KMK

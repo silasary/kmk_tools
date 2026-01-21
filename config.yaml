@@ -48,6 +48,7 @@ game_repos:
     glob: "**/*.py"
     skip:
       - quake_three_game.py  # Broken
+  - url: https://github.com/KJ7QLV/KMK
   - url: https://github.com/Knuxfan24/KnuxKeep
   - url: https://github.com/Kroooga/KeymastersKeepGames
   - url: https://github.com/LikeToCodeStreams/KeymastersKeepGames
