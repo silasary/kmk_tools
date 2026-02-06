@@ -1,3 +1,4 @@
+import collections
 import os
 import sys
 import random
@@ -118,7 +119,14 @@ def write_docs(games):
 
             f.write("\n")
             for key, dataset in game['datasets'].items():
-                f.write(f'[^{key}]: {", ".join([str(i) for i in dataset])}\n')
+                f.write(f'[^{key}]: ')
+                for index, item in enumerate(dataset):
+                    if index != 0:
+                        f.write(', ')
+                    f.write(str(item['value']))
+                    if item['count'] > 1:  # Show count as subscript
+                        f.write(f"<sub>×{item['count']}</sub>")
+                f.write('\n')
 
         for platform in game['platforms']:
             by_platform.setdefault(platform, []).append(game)
@@ -164,7 +172,7 @@ def expand_objectives(game: "Game"):
     data = {"game": game.name, "objectives": objectives, "datasets": datasets}
     return data
 
-def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Dict[str, Any]:
+def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, List[Dict[str, Any]]]) -> Dict[str, Any]:
     game_objective = o.label
 
     key: str
@@ -197,7 +205,14 @@ def expand_objective(o: "GameObjectiveTemplate", datasets: Dict[str, Any]) -> Di
         if funcname == "<lambda>":
             funcname = f"lambda_{collection[0].__code__.co_firstlineno}"
         data[key] = funcname
-        datasets[funcname] = sorted(evaluated_collection)
+        # Some implementations duplicate dataset values to artificially create weighted selection without using the `weight` attribute. This has the potential to fill footnotes with way too much text. To avoid this, unique values are identified and counted, the counts being displayed in footnotes if necessary.
+        func_value_counts = collections.Counter(evaluated_collection)
+        func_values = sorted(func_value_counts.keys())
+        datasets[funcname] = []
+        for value in func_values:
+            datasets[funcname].append(
+                {"value": value, "count": func_value_counts[value]}
+            )
 
     return {
             "label": game_objective,
