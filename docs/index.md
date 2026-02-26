@@ -1,7 +1,9 @@
-Welcome to an incomplete codex of Keymaster's Keep games.
+Welcome to the incomplete codex of Keymaster's Keep games.
 
-It aims to give a quick impression of what games exist, and what kind of tasks they'll give you without the need to dig through a lot of source code.
+It aims to give a quick impression of what games exist, and what kind of tasks they'll give you, without the need to dig through a lot of source code.
 
-Objectives with a ⚠️ are "Difficult", ⌛ are "Time Consuming".
+Objectives marked with ⚠️ are **Difficult**, and those with ⌛ are **Time Consuming**.
 
-Most objective lists are generated with default yaml options, There is no attempt to figure out what happens if you change them.
+Objective lists are generated with default YAML options. This codex makes no attempt to figure out what happens if you change them.
+
+First time here? Check out **[What is Keymaster's Keep?](what_is_keymasters/)**, and then read the **[Installation](installation/)** guide.
