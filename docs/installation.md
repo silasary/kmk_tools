@@ -7,10 +7,6 @@ It is assumed you have already installed the Archipelago Launcher. If not, follo
 ## Installing Keymaster's Keep
 
 - **1\.** Download the `.apworld` of the [latest Keymaster's Keep release from *silasary*'s Archipelago fork on GitHub](https://github.com/silasary/Archipelago/releases?q=keymaster%27s+keep).
-
-??? "Warning"
-    If KMK changes maintainer from *silasary* in the future, the fork you will need to download the release from may change. To stay up to date, refer to the [Keymaster's Keep's thread](https://discord.com/channels/731205301247803413/1321323711676284939) on the [Archipelago Discord server](https://discord.gg/8Z65BR2).
-
 - **2\.** Either place the `.apworld` file into the Archipelago Launcher's `worlds/` folder, or run the Archipelago Launcher and open **Install APWorld**, selecting the downloaded file.
     - If you do the latter, you must then close the Archipelago Launcher.
 
