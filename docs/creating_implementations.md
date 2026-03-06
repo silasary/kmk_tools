@@ -163,7 +163,11 @@ def levels_base(self) -> List[str]:
 
 @functools.cached_property
 def hard_levels(self) -> List[str]:
-    return ["Hard Level 1", "Hard Level 2", "Hard Level 3"]
+    return [  # List items are also valid stacked vertically like this
+        "Hard Level 1",
+        "Hard Level 2",
+        "Hard Level 3"
+    ]
 ```
 
 Above we see two properties that look quite similar to the static method example: one for normal levels (`levels_base()`) and one for hard levels (`hard_levels()`).
