@@ -159,7 +159,7 @@ These are a bit more complicated and are used when we need to combine lists base
 ```python
 @functools.cached_property
 def levels_base(self) -> List[str]:
-    return ["Level 1", "Level 2", "Level 3",]
+    return ["Level 1", "Level 2", "Level 3"]
 
 @functools.cached_property
 def hard_levels(self) -> List[str]:
