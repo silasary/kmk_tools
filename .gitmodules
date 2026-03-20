@@ -133,3 +133,6 @@
 [submodule "submodules/kj7qlv_kmk"]
 	path = submodules/kj7qlv_kmk
 	url = https://github.com/KJ7QLV/KMK
+[submodule "submodules/mrsummer360_keymasters_keep_games"]
+	path = submodules/mrsummer360_keymasters_keep_games
+	url = https://github.com/mrsummer360/Keymasters_Keep_Games
