@@ -52,6 +52,7 @@ game_repos:
   - url: https://github.com/Knuxfan24/KnuxKeep
   - url: https://github.com/Kroooga/KeymastersKeepGames
   - url: https://github.com/LikeToCodeStreams/KeymastersKeepGames
+  - url: https://github.com/LeiAfkpuz/KeymastersKeepGames
   - url: https://github.com/lorebum1/KeymasterKeepGames
   - url: https://github.com/ManNamedGarbo/KeymastersKeepGames
     glob: "*.py"
