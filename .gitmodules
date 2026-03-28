@@ -136,3 +136,6 @@
 [submodule "submodules/mrsummer360_keymasters_keep_games"]
 	path = submodules/mrsummer360_keymasters_keep_games
 	url = https://github.com/mrsummer360/Keymasters_Keep_Games
+[submodule "submodules/leiafkpuz_keymasterskeepgames"]
+	path = submodules/leiafkpuz_keymasterskeepgames
+	url = https://github.com/LeiAfkpuz/KeymastersKeepGames
