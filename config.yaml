@@ -66,6 +66,7 @@ game_repos:
       steam_library.py: True  # Accesses the Steam API during generation
 
   - https://github.com/NitroTears/KeymastersKeepGames
+  - https://github.com/NotASuspiciousAccount/KeymastersKeepGames
   - https://github.com/pamymaf/KeymastersKeepGames
   - https://github.com/Pantscada/keymasterskeepgames
   - https://github.com/pokemonfan1937/keymasterskeep
