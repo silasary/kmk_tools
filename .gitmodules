@@ -139,3 +139,6 @@
 [submodule "submodules/leiafkpuz_keymasterskeepgames"]
 	path = submodules/leiafkpuz_keymasterskeepgames
 	url = https://github.com/LeiAfkpuz/KeymastersKeepGames
+[submodule "submodules/notasuspiciousaccount_keymasterskeepgames"]
+	path = submodules/notasuspiciousaccount_keymasterskeepgames
+	url = https://github.com/NotASuspiciousAccount/KeymastersKeepGames
