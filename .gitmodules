@@ -121,9 +121,6 @@
 [submodule "submodules/nitrotears_keymasterskeepgames"]
 	path = submodules/nitrotears_keymasterskeepgames
 	url = https://github.com/NitroTears/KeymastersKeepGames
-[submodule "submodules/elirefeltores_keymasterskeepminesweeperplus"]
-	path = submodules/elirefeltores_keymasterskeepminesweeperplus
-	url = https://github.com/ElireFeltores/KeymastersKeepMinesweeperPlus
 [submodule "submodules/jack5github_jack5-keymasters-keep"]
 	path = submodules/jack5github_jack5-keymasters-keep
 	url = https://github.com/jack5github/Jack5-Keymasters-Keep
@@ -142,3 +139,6 @@
 [submodule "submodules/notasuspiciousaccount_keymasterskeepgames"]
 	path = submodules/notasuspiciousaccount_keymasterskeepgames
 	url = https://github.com/NotASuspiciousAccount/KeymastersKeepGames
+[submodule "submodules/elirefeltores_eavkeymasterimplementations"]
+	path = submodules/elirefeltores_eavkeymasterimplementations
+	url = https://github.com/ElireFeltores/EAVKeymasterImplementations
