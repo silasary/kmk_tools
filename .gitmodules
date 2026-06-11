@@ -142,3 +142,9 @@
 [submodule "submodules/elirefeltores_eavkeymasterimplementations"]
 	path = submodules/elirefeltores_eavkeymasterimplementations
 	url = https://github.com/ElireFeltores/EAVKeymasterImplementations
+[submodule "submodules/pikscast_keymasterskeepgames"]
+	path = submodules/pikscast_keymasterskeepgames
+	url = https://github.com/pikscast/KeymastersKeepGames
+[submodule "submodules/sparky5000_keymasterskeepgames"]
+	path = submodules/sparky5000_keymasterskeepgames
+	url = https://github.com/Sparky5000/KeymastersKeepGames
