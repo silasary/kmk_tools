@@ -148,3 +148,6 @@
 [submodule "submodules/sparky5000_keymasterskeepgames"]
 	path = submodules/sparky5000_keymasterskeepgames
 	url = https://github.com/Sparky5000/KeymastersKeepGames
+[submodule "submodules/ville-fleur_kmk-implementations"]
+	path = submodules/ville-fleur_kmk-implementations
+	url = https://github.com/ville-fleur/KMK-implementations
