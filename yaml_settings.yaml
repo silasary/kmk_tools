@@ -11,3 +11,4 @@ mugen_characters:
 # Smash Ultimate
 super_smash_bros_ultimate_include_boss_battles: true
 super_smash_bros_ultimate_include_spirit_battles: true
+backloggery_demo_data: true
